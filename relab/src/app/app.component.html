@@ -1,8 +1,9 @@
 {{title}}
 <!--Centriamo la mappa alle nostre coordinate-->
-<agm-map [latitude]="lat" [longitude]="lng">  
+<google-map [center]="positionCasa">  
   <!--Mettiamo un marker alle nostre coordinate-->
-  <agm-marker [latitude]="lat" [longitude]="lng">
-  </agm-marker>
-</agm-map>
-
+  <map-marker [position]="position" [label]="label" [title]="title">
+  </map-marker>
+  <map-marker [position]="positionCasa" [label]="labelCasa">
+  </map-marker>
+</google-map>
