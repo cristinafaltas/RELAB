@@ -1,9 +1,23 @@
 {{title}}
 <!--Centriamo la mappa alle nostre coordinate-->
-<google-map [center]="positionCasa">  
+<google-map [center]="center">  
   <!--Mettiamo un marker alle nostre coordinate-->
-  <map-marker [position]="position" [label]="label" [title]="title">
-  </map-marker>
+  <map-marker [position]="position" 
+              [label]="label" 
+              [title]="title"
+              [options] = "markerOptions">
+</map-marker>
   <map-marker [position]="positionCasa" [label]="labelCasa">
   </map-marker>
+  <map-circle [center]="position"
+              [radius]="50"
+              [options] = 'circleOptions'>
+  </map-circle>
+  <map-circle [center]="positionCasa"
+              [radius]="50"
+              [options] = 'circleOptionsCasa'>
+  </map-circle>
 </google-map>
+
+
+ 

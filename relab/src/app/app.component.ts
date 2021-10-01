@@ -14,7 +14,9 @@ export class AppComponent {
   positionCasa : any
   label :string;
   labelCasa : string;
-  
+  circleOptions: { fillColor: string; };
+  circleOptionsCasa: { fillColor: string; };
+  markerOptions: google.maps.MarkerOptions;
   constructor()
   {
     this.center={lat: 45.506738, lng: 9.190766};
@@ -24,6 +26,16 @@ export class AppComponent {
     this.positionCasa={lat: 45.5048142, lng: 9.180008};
     
     this.labelCasa = "Casa Mia";
+
+    this.circleOptions = {fillColor : 'red'}
+    this.circleOptionsCasa = {fillColor : 'purple'}
+
+    let iconData : google.maps.Icon = {
+      url:'./assets/img/cat_acrobat.ico',
+      scaledSize : new google.maps.Size(60,60)
+    }
+  
+    this.markerOptions = {icon:iconData}
   }
  
 }
