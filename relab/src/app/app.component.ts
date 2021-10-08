@@ -15,6 +15,7 @@ export class AppComponent {
   label :string;
   labelCasa : string;
   circleOptions: { fillColor: string; };
+  rOption: { fillColor: string; };
   circleOptionsCasa: { fillColor: string; };
   markerOptions: google.maps.MarkerOptions;
   position2: { lat: number; lng: number; };
@@ -23,6 +24,8 @@ export class AppComponent {
   markerOptions2: { icon: google.maps.Icon; };
   markerOptions3: { icon: google.maps.Icon; };
   markerOptions4: { icon: google.maps.Icon; };
+  vertices: google.maps.LatLngLiteral[];
+  rettangolo: { lat: any; lng: any; }[];
 
   cambiacoloreBlu()
   {
@@ -42,13 +45,28 @@ export class AppComponent {
     this.circleOptionsCasa = {fillColor : 'brown'}
   }
 
+  cambiacoloreBluR()
+  {
+    this.rOption = {fillColor : 'blue'}
+  }
+ 
+  cambiacoloreVerdeR()
+  {
+    this.rOption = {fillColor : 'green'}
+  }
+ 
+  cambiacoloreMarroneR()
+  {
+    this.rOption = {fillColor : 'brown'}
+  }
+
   constructor()
   {
     this.center={lat: 45.506738, lng: 9.190766};
     this.position = this.center;
-    this.position2 = {lat: 45.506745, lng: 9.190770};
-    this.position3 = {lat: 45.506755, lng: 9.190773};
-    this.position4 = {lat: 45.506760, lng: 9.190776};
+    this.position2 = {lat: 45.506750, lng: 9.190777};
+    this.position3 = {lat: 45.506755, lng: 9.190788};
+    this.position4 = {lat: 45.506765, lng: 9.190799};
     this.label = "Scuola";
  
     this.positionCasa={lat: 45.5048142, lng: 9.180008};
@@ -57,6 +75,7 @@ export class AppComponent {
 
     this.circleOptions = {fillColor : 'red'}
     this.circleOptionsCasa = {fillColor : 'purple'}
+    this.rOption = {fillColor : 'black'}
 
     let iconData : google.maps.Icon = {
       url:'./assets/img/cat_acrobat.ico',
@@ -85,6 +104,18 @@ export class AppComponent {
     this.markerOptions3 = {icon:iconData3}
 
     this.markerOptions4 = {icon:iconData4}
+
+    this.vertices = [
+      {  lat: this.center.lat + 0.001, lng: this.center.lng - 0.002},
+      {  lat: this.center.lat, lng: this.center.lng },
+      {  lat: this.center.lat - 0.001, lng: this.center.lng - 0.002}
+    ];
+    this.rettangolo = [
+      {  lat: this.center.lat + 0.001, lng: this.center.lng + 0.001},
+      {  lat: this.center.lat + 0.001, lng: this.center.lng + 0.002},
+      {  lat: this.center.lat - 0.001, lng: this.center.lng + 0.002},
+      {  lat: this.center.lat - 0.001, lng: this.center.lng + 0.001}
+    ];
   }
  
 }

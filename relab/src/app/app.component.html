@@ -7,7 +7,8 @@
               [title]="title"
               [options] = "markerOptions">
   </map-marker>
-  <map-marker [position]="positionCasa" [label]="labelCasa">
+  <map-marker [position]="positionCasa" 
+              [label]="labelCasa">
   </map-marker>
   <map-circle [center]="position"
               [radius]="50"
@@ -18,22 +19,29 @@
               [options] = 'circleOptionsCasa'>
   </map-circle>
   <map-marker [position]="position2" 
-              [label]="label" 
               [title]="title"
               [options] = "markerOptions2">
   </map-marker>
   <map-marker [position]="position3" 
-              [label]="label" 
               [title]="title"
               [options] = "markerOptions3">
   </map-marker>
   <map-marker [position]="position4" 
-              [label]="label" 
               [title]="title"
               [options] = "markerOptions4">
   </map-marker>
+
+  <map-polygon [paths]="vertices">
+  </map-polygon>
+  <map-polygon [paths]="rettangolo"
+                [options]="rOption">
+  </map-polygon>
 </google-map>
 
 <button (click)="cambiacoloreBlu()">Blu</button>
 <button (click)="cambiacoloreVerde()">Verde</button>
 <button (click)="cambiacoloreMarrone()">Marrone</button>
+
+<button (click)="cambiacoloreBluR()">Rettangolo Blu</button>
+<button (click)="cambiacoloreVerdeR()">Rettangolo Verde</button>
+<button (click)="cambiacoloreMarroneR()">Rettangolo Marrone</button>
